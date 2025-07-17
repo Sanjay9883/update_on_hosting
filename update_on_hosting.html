@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+       
+        body{
+            height: 100vh;
+            background-image: linear-gradient(
+            to right top,
+            #0d0dce,
+            #b3b326,
+            #38dd38,
+            #090808,
+            #d71d1d
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        section{
+            background-color: rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            
+            
+        }
+        button{
+            padding: 10px 20px;
+            margin: 10px 50px;
+            border: none;
+            border-radius: 15px;
+            color: #fff;
+            cursor: pointer;
+            
+
+        }
+        
+        h2{
+            margin: 20px;
+            text-align: center;
+            font-size: medium;
+        }
+        #myButton1{
+            background-color: rgb(19, 184, 19);
+            color: rgb(25, 25, 193);
+           
+        }
+        #myButton2{
+            background-color: rgb(232, 232, 14);
+            color: rgb(40, 33, 33);
+           
+           
+        }
+        .copyCode{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            font-size: 15px;
+            width: 60%;
+            margin:  auto; 
+            display: block;
+            line-height: 1.4;
+            letter-spacing: 0.2px;
+            border-left: 3px solid #fff;
+            background-color: rgba(189, 64, 292, 0.1);
+            padding: 15px 8px 15px 17px;
+            border-radius: 5px;
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div>
+            <button id="myButton1">#051937</button>
+            <button id="myButton2">#005893</button>
+        
+        <h2>copey code here</h2>
+
+        <div class="copyCode">
+            background-image: linear-gradient(to right, rgb(95, 155, 295), rgb(125, 63, 294)); 
+        </div>
+        </div>
+    </section>
+    <script>
+        let btn1 = document.getElementById("myButton1");
+        let btn2 = document.getElementById("myButton2");
+        let copyDive = document.querySelector(".copyCode");
+        let rgb1 = "#000";
+        let rgb2 = "#fff";
+
+        const Haxvalu = () =>{
+             let myhexaValues = "0123456789abcdef";
+            let colors = "#"
+            for (let i = 0; i < 6; i++){
+           colors = colors + myhexaValues[Math.floor(Math.random() * 16)];
+            }
+           return colors;
+        };   
+        
+       const handleButton1 = () =>{
+           rgb1 = Haxvalu();
+           console.log(rgb1);
+           btn1.innerText = rgb1;
+           document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})` ;
+           copyDive.innerHTML = 
+            `background-image: linear-gradient(to right, ${rgb1}, ${rgb2}`; 
+       }; 
+       const handleButton2 = () =>{
+           rgb2 = Haxvalu();
+           console.log(rgb2);
+           btn2.innerText = rgb2;
+           document.body.style.backgroundImage = `linear-gradient(to right, ${rgb1}, ${rgb2})`;
+           copyDive.innerHTML = 
+            `background-image: linear-gradient(to right, ${rgb1}, ${rgb2})`; 
+       }; 
+        btn1.addEventListener("click", handleButton1);
+        btn2.addEventListener("click", handleButton2);
+    </script>
+</body>
+</html>
